@@ -10,6 +10,7 @@ import { createStructuredSelector } from 'reselect';
 
 import { makeSelectLoading, makeSelectError, makeSelectTweets } from 'containers/App/selectors';
 import Tweet from 'components/Tweet';
+import CreateTweetForm from 'components/CreateTweetForm'
 import { loadTweets } from '../App/actions';
 
 export class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
@@ -21,6 +22,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
     const { tweets } = this.props;
     return (
       <article>
+        <CreateTweetForm />
         {
           tweets && tweets.map(
             (tweet, key) => <Tweet key={key} {...tweet} />

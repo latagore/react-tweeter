@@ -15,7 +15,7 @@ function Tweet(props) {
   return (
     <Wrapper>
       <TweetHeader>
-        <Avatar src={user.avatarImageURL} handle={`${user.handle} avatar`} />
+        <Avatar src={user.avatarImageURL} handle={`${user.handle}`} />
         <Handle handle={user.handle} />
       </TweetHeader>
       <TweetBody>{props.content}</TweetBody>

@@ -41,22 +41,22 @@ describe('<HomePage />', () => {
   // });
   //
   describe('mapDispatchToProps', () => {
-  //   describe('onChangeUsername', () => {
-  //     it('should be injected', () => {
-  //       const dispatch = jest.fn();
-  //       const result = mapDispatchToProps(dispatch);
-  //       expect(result.onChangeUsername).toBeDefined();
-  //     });
-  //
-  //     it('should dispatch changeUsername when called', () => {
-  //       const dispatch = jest.fn();
-  //       const result = mapDispatchToProps(dispatch);
-  //       const username = 'mxstbr';
-  //       result.onChangeUsername({ target: { value: username } });
-  //       expect(dispatch).toHaveBeenCalledWith(changeUsername(username));
-  //     });
-  //   });
-  //
+    describe('onChangeTextArea', () => {
+      it('should be injected', () => {
+        const dispatch = jest.fn();
+        const result = mapDispatchToProps(dispatch);
+        expect(result.onChangeTextArea).toBeDefined();
+      });
+
+      it('should dispatch changeTextAreaText when called', () => {
+        const dispatch = jest.fn();
+        const result = mapDispatchToProps(dispatch);
+        const text = 'some text for the text area';
+        result.onChangeTextArea({ target: { value: text } });
+        expect(dispatch).toHaveBeenCalledWith(changeTextAreaText(text));
+      });
+    });
+
     describe('onSubmitForm', () => {
       it('should be injected', () => {
         const dispatch = jest.fn();

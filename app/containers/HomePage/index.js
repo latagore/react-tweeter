@@ -29,7 +29,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
     return (
       <article>
         <Form>
-          <TextArea onChange={this.props.onTextAreaChange} value={this.props.textAreaText} />
+          <TextArea onChange={this.props.onChangeTextArea} value={this.props.textAreaText} />
           <Button onClick={() => {this.props.onTweet}}>
             <FormattedMessage {...messages.createTweet} />
           </Button>
@@ -65,6 +65,9 @@ export function mapDispatchToProps(dispatch) {
     onSubmitForm: (evt) => {
       if (evt !== undefined && evt.preventDefault) evt.preventDefault();
       dispatch(createTweet());
+    },
+    onChangeTextArea: (evt) => {
+      dispatch(changeTextAreaText(evt.target.value));
     }
   };
 }

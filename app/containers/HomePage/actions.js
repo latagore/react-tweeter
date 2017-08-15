@@ -16,19 +16,31 @@
  */
 
 import {
-  CHANGE_USERNAME,
+  CHANGE_TEXT_AREA_TEXT,
+  CREATE_TWEET,
 } from './constants';
 
 /**
- * Changes the input field of the form
+ * Changes the text area of the form
  *
- * @param  {name} name The new text of the input field
+ * @param  {name} text The new text of the input field
  *
- * @return {object}    An action object with a type of CHANGE_USERNAME
+ * @return {object}    An action object with a type of CHANGE_TEXT_AREA_TEXT
  */
-export function changeUsername(name) {
+export function changeTextAreaText(text) {
   return {
-    type: CHANGE_USERNAME,
-    name,
+    type: CHANGE_TEXT_AREA_TEXT,
+    text,
+  };
+}
+
+/**
+ * Creates a tweet.
+ *
+ * @return {object}    An action object with a type of CHANGE_TEXT_AREA_TEXT
+ */
+export function createTweet() {
+  return {
+    type: CREATE_TWEET,
   };
 }

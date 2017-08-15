@@ -19,7 +19,21 @@ import {
   LOAD_TWEETS,
   LOAD_TWEETS_SUCCESS,
   LOAD_TWEETS_ERROR,
+  CREATE_TWEET,
+  CREATE_TWEET_SUCCESS,
+  CREATE_TWEET_ERROR
 } from './constants';
+
+/**
+ * Load the tweets, this action starts the request saga
+ *
+ * @return {object} An action object with a type of LOAD_TWEETS
+ */
+export function createTweet() {
+  return {
+    type: CREATE_TWEET,
+  };
+}
 
 /**
  * Load the tweets, this action starts the request saga

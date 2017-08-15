@@ -30,7 +30,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
       <article>
         <Form>
           <TextArea onChange={this.props.onChangeTextArea} value={this.props.textAreaText} />
-          <Button onClick={() => {this.props.onTweet}}>
+          <Button onClick={this.props.onSubmitForm}>
             <FormattedMessage {...messages.createTweet} />
           </Button>
         </Form>

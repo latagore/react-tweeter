@@ -26,20 +26,22 @@ describe('<HomePage />', () => {
     expect(renderedComponent.contains(<ReposList loading error={false} repos={[]} />)).toEqual(true);
   });
 
-  // it('should render fetch the repos on mount if a username exists', () => {
-  //   const submitSpy = jest.fn();
-  //   mount(
-  //     <IntlProvider locale="en">
-  //       <HomePage
-  //         username="Not Empty"
-  //         onChangeUsername={() => {}}
-  //         onSubmitForm={submitSpy}
-  //       />
-  //     </IntlProvider>
-  //   );
-  //   expect(submitSpy).toHaveBeenCalled();
-  // });
-  //
+  it('should call onSubmitForm when the button is clicked', () => {
+    const submitSpy = jest.fn();
+    const renderedComponent = mount(
+      <IntlProvider locale="en">
+        <HomePage
+          onSubmitForm={submitSpy}
+          loadTweets={() => {}}
+        />
+      </IntlProvider>
+    );
+
+    renderedComponent.find(Button).simulate('click');
+    expect(submitSpy).toHaveBeenCalled();
+    // check state
+  });
+
   describe('mapDispatchToProps', () => {
     describe('onChangeTextArea', () => {
       it('should be injected', () => {

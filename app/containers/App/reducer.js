@@ -16,16 +16,16 @@ import {
   LOAD_TWEETS_SUCCESS,
   LOAD_TWEETS,
   LOAD_TWEETS_ERROR,
+  CREATE_TWEET,
+  CREATE_TWEET_SUCCESS,
+  CREATE_TWEET_ERROR,
 } from './constants';
 
 // The initial state of the App
 const initialState = fromJS({
   loading: false,
   error: false,
-  currentUser: false,
-  userData: {
-    repositories: false,
-  },
+  tweets: [],
 });
 
 function appReducer(state = initialState, action) {
@@ -33,13 +33,28 @@ function appReducer(state = initialState, action) {
     case LOAD_TWEETS:
       return state
         .set('loading', true)
-        .set('error', false)
-        .set('tweets', false);
+        .set('error', false);
     case LOAD_TWEETS_SUCCESS:
       return state
         .set('tweets', action.tweets)
         .set('loading', false);
     case LOAD_TWEETS_ERROR:
+      return state
+        .set('error', action.error)
+        .set('loading', false);
+    case CREATE_TWEET:
+      return state
+        .set('loading', true)
+        .set('error', false);
+    case CREATE_TWEET_SUCCESS:
+      let newState = state;
+      if (action.tweets) {
+        newState = newState
+          .set('tweets', action.tweets);
+      }
+      return newState
+        .set('loading', false);
+    case CREATE_TWEET_ERROR:
       return state
         .set('error', action.error)
         .set('loading', false);

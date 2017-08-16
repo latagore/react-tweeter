@@ -36,6 +36,35 @@ export function createTweet() {
 }
 
 /**
+ * Dispatched when the tweet is created and the new tweets are loaded
+ *
+ * @param  {array} tweets The tweet data
+ *
+ * @return {object}      An action object with a type of CREATE_TWEET_SUCCESS passing the tweets
+ */
+export function tweetCreated(tweets) {
+  return {
+    type: CREATE_TWEET_SUCCESS,
+    tweets,
+  };
+}
+
+/**
+ * Dispatched when creating the tweet fails
+ *
+ * @param  {object} error The error
+ *
+ * @return {object}       An action object with a type of CREATE_TWEET_ERROR passing the error
+ */
+export function tweetCreatingError(error) {
+  return {
+    type: CREATE_TWEET_ERROR,
+    error,
+  };
+}
+
+
+/**
  * Load the tweets, this action starts the request saga
  *
  * @return {object} An action object with a type of LOAD_TWEETS

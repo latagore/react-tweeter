@@ -12,4 +12,7 @@
 export const LOAD_TWEETS = 'boilerplate/App/LOAD_TWEETS';
 export const LOAD_TWEETS_SUCCESS = 'boilerplate/App/LOAD_TWEETS_SUCCESS';
 export const LOAD_TWEETS_ERROR = 'boilerplate/App/LOAD_TWEETS_ERROR';
+export const CREATE_TWEET = 'boilerplate/App/CREATE_TWEET';
+export const CREATE_TWEET_SUCCESS = 'boilerplate/App/CREATE_TWEET_SUCCESS';
+export const CREATE_TWEET_ERROR = 'boilerplate/App/CREATE_TWEET_ERROR';
 export const DEFAULT_LOCALE = 'en';

@@ -29,7 +29,9 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
     return (
       <article>
         <Form>
-          <TextArea onChange={this.props.onChangeTextArea} value={this.props.textAreaText} />
+          <TextArea
+            onChange={(e) => this.props.onChangeTextArea(e.target.value)}
+            value={this.props.textAreaText} />
           <Button onClick={this.props.onSubmitForm}>
             <FormattedMessage {...messages.createTweet} />
           </Button>
@@ -65,6 +67,7 @@ export function mapDispatchToProps(dispatch) {
     onSubmitForm: (evt) => {
       if (evt !== undefined && evt.preventDefault) evt.preventDefault();
       dispatch(createTweet());
+      dispatch(changeTextAreaText(''));
     },
     onChangeTextArea: (evt) => {
       dispatch(changeTextAreaText(evt.target.value));

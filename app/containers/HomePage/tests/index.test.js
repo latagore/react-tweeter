@@ -80,6 +80,13 @@ describe('<HomePage />', () => {
         result.onSubmitForm(evt);
         expect(preventDefault).toHaveBeenCalledWith();
       });
+
+      it('should dispatch changeTextAreaText() with empty string when called', () => {
+        const dispatch = jest.fn();
+        const result = mapDispatchToProps(dispatch);
+        result.onSubmitForm();
+        expect(dispatch).toHaveBeenCalledWith(changeTextAreaText(''));
+      });
     });
   });
 });

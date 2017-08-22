@@ -1,9 +1,9 @@
 import {
-  CHANGE_USERNAME,
+  CHANGE_TEXT_AREA_TEXT,
 } from '../constants';
 
 import {
-  changeUsername,
+  changeTextAreaText,
 } from '../actions';
 
 describe('Home Actions', () => {
@@ -11,11 +11,11 @@ describe('Home Actions', () => {
     it('should return the correct type and the passed name', () => {
       const fixture = 'Max';
       const expectedResult = {
-        type: CHANGE_USERNAME,
-        name: fixture,
+        type: CHANGE_TEXT_AREA_TEXT,
+        text: fixture,
       };
 
-      expect(changeUsername(fixture)).toEqual(expectedResult);
+      expect(changeTextAreaText(fixture)).toEqual(expectedResult);
     });
   });
 });

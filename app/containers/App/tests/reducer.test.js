@@ -99,5 +99,24 @@ describe('appReducer', () => {
 
     expect(appReducer(state, createTweet())).toEqual(expectedResult);
   });
-  it('should not change tweets when handling loadTweets');
+
+  it('should not change tweets when handling loadTweets', () => {
+    const fixture = [{
+      user: 'some user',
+      content: 'some tweet text',
+    }];
+
+    state = fromJS({
+      loading: false,
+      error: false,
+      tweets: fromJS(fixture),
+    });
+    const expectedResult = fromJS({
+      loading: true,
+      error: false,
+      tweets: fromJS(fixture),
+    });
+
+    expect(appReducer(state, loadTweets())).toEqual(expectedResult);
+  });
 });

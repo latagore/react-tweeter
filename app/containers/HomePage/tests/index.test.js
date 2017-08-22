@@ -6,7 +6,7 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { IntlProvider } from 'react-intl';
 
-import ReposList from 'components/ReposList';
+import TweetsList from 'components/TweetsList';
 import Button from 'components/Button';
 import Form from '../Form';
 import TextArea from '../TextArea';
@@ -23,7 +23,7 @@ describe('<HomePage />', () => {
     expect(renderedComponent.find(Form).length).toBe(1);
     expect(renderedComponent.find(Button).length).toBe(1);
     expect(renderedComponent.find(TextArea).length).toBe(1);
-    expect(renderedComponent.contains(<ReposList loading error={false} repos={[]} />)).toEqual(true);
+    expect(renderedComponent.contains(<TweetsList loading error={false} tweets={[]} />)).toEqual(true);
   });
 
   it('should call onSubmitForm when the button is clicked', () => {

@@ -12,7 +12,7 @@ import { createStructuredSelector } from 'reselect';
 import { makeSelectLoading, makeSelectError, makeSelectTweets } from 'containers/App/selectors';
 import { loadTweets } from 'containers/App/actions';
 import Button from 'components/Button';
-import Tweet from 'components/Tweet';
+import TweetsList from 'components/TweetsList';
 import Form from './Form';
 import TextArea from './TextArea';
 import messages from './messages';
@@ -25,7 +25,6 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
   }
 
   render() {
-    const { tweets } = this.props;
     return (
       <article>
         <Form>
@@ -36,11 +35,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
             <FormattedMessage {...messages.createTweet} />
           </Button>
         </Form>
-        {
-          tweets && tweets.map(
-            (tweet, key) => <Tweet key={key} {...tweet} />
-          )
-        }
+        <TweetsList loading={this.props.loading} error={this.props.error} tweets={this.props.tweets} />
       </article>
     );
   }

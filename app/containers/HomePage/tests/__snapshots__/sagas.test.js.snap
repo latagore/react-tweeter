@@ -18,7 +18,7 @@ Object {
   "@@redux-saga/IO": true,
   "CALL": Object {
     "args": Array [
-      "localhost:3000/api/feed",
+      "http://localhost:3000/api/feed",
     ],
     "context": null,
     "fn": [Function],

@@ -25,7 +25,7 @@ import {
 const initialState = fromJS({
   loading: false,
   error: false,
-  tweets: [],
+  tweets: false,
 });
 
 function appReducer(state = initialState, action) {

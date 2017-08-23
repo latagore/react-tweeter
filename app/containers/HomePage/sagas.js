@@ -14,17 +14,20 @@ import request from 'utils/request';
  */
 export function* getTweets() {
   // fake data to test the app
-  const fakeTweets = [
-    {
-      user: {
-        handle: 'Dog',
-        avatarImageURL: 'http://i.imgur.com/Iek1A.png',
-      },
-      content: 'Hello world!',
-    },
-  ];
+  // const fakeTweets = [
+  //   {
+  //     user: {
+  //       handle: 'Dog',
+  //       avatarImageURL: 'http://i.imgur.com/Iek1A.png',
+  //     },
+  //     content: 'Hello world!',
+  //   },
+  // ];
+  const requestURL = `localhost:3000/api/feed`;
+
   try {
-    yield put(tweetsLoaded(fakeTweets));
+    const tweets = yield call(request, requestURL);
+    yield put(tweetsLoaded(tweets));
   } catch (err) {
     yield put(tweetsLoadingError(err));
   }

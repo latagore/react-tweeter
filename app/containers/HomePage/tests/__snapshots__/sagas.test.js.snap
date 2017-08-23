@@ -1,21 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`getRepos Saga should call the repoLoadingError action if the response errors 1`] = `
-Object {
-  "@@redux-saga/IO": true,
-  "SELECT": Object {
-    "args": Array [],
-    "selector": [Function],
-  },
-}
-`;
-
-exports[`getRepos Saga should call the repoLoadingError action if the response errors 2`] = `
+exports[`getTweets Saga should call the tweetsLoadingError action if the response errors 1`] = `
 Object {
   "@@redux-saga/IO": true,
   "CALL": Object {
     "args": Array [
-      "https://api.github.com/users/mxstbr/repos?type=all&sort=updated",
+      "localhost:3000/api/feed",
     ],
     "context": null,
     "fn": [Function],
@@ -23,22 +13,12 @@ Object {
 }
 `;
 
-exports[`getRepos Saga should dispatch the reposLoaded action if it requests the data successfully 1`] = `
-Object {
-  "@@redux-saga/IO": true,
-  "SELECT": Object {
-    "args": Array [],
-    "selector": [Function],
-  },
-}
-`;
-
-exports[`getRepos Saga should dispatch the reposLoaded action if it requests the data successfully 2`] = `
+exports[`getTweets Saga should dispatch the tweetsLoaded action if it requests the data successfully 1`] = `
 Object {
   "@@redux-saga/IO": true,
   "CALL": Object {
     "args": Array [
-      "https://api.github.com/users/mxstbr/repos?type=all&sort=updated",
+      "localhost:3000/api/feed",
     ],
     "context": null,
     "fn": [Function],

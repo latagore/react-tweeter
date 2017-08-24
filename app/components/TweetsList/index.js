@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 
 import List from 'components/List';
-import ListItem from 'components/ListItem';
+import TweetListItem from 'components/TweetListItem';
 import LoadingIndicator from 'components/LoadingIndicator';
 import Tweet from 'components/Tweet';
 
@@ -18,7 +18,7 @@ function TweetsList({ loading, error, tweets }) {
   }
 
   if (tweets !== false) {
-    return <List items={tweets} component={Tweet} />;
+    return <List items={tweets} component={TweetListItem} />;
   }
 
   return null;

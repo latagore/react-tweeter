@@ -23,7 +23,7 @@ export function* getTweets() {
   //     content: 'Hello world!',
   //   },
   // ];
-  const requestURL = `localhost:3000/api/feed`;
+  const requestURL = `http://localhost:3000/api/feed`;
 
   try {
     const tweets = yield call(request, requestURL);
